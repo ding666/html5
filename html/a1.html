@@ -1,21 +1,183 @@
 <!DOCTYPE html>
+
 <html>
- 
-   <head>
-      <meta charset="utf-8">
-      <title>Learn HTML5</title>
-   </head>
-	
-   <body>	
-   
-      <header role="banner">
-         <h1>HTML5 Document Structure Example 2</h1>
-         <p>This page should be tried in safari, chrome or Mozila.</p>
-      </header>
-      
-      <footer>
-         <p>Created by <a href="http://tutorialspoint.com/">Tutorials Point</a></p>
-      </footer>
-      
-   </body>   
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 learning</title>
+    <link rel="stylesheet" href="../css/html5.css">
+</head>
+
+<body>
+
+    <header role="banner">
+        <h1>HTML5 Document Structure Example</h1>
+        <p>This page should be tried in safari, chrome or Mozila.</p>
+    </header>
+
+    <nav>
+
+        <ul>
+            <li>
+                <a href="#">HTML Tutorial</a>
+            </li>
+            <li>
+                <a href="#">CSS Tutorial</a>
+            </li>
+            <li>
+                <a href="#">JavaScript Tutorial</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <article>
+        <section>
+            <div itemscope itemtype="http://schema.org/SoftwareApplication">
+                <span itemprop="name">Angry Birds</span> - REQUIRES
+                <span itemprop="operatingSystem">ANDROID</span>
+                <br>
+                <link itemprop="applicationCategory" href="http://schema.org/GameApplication" />
+
+                <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                    RATING:
+                    <span itemprop="ratingValue">4.6</span> (
+                    <span itemprop="ratingCount">8864</span> ratings )
+                </div>
+
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    Price: $
+                    <span itemprop="price">1.00</span>
+                    <meta itemprop="priceCurrency" content="USD" />
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1>My First Google Map</h1>
+
+            <div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+            <script>
+                function myMap() {
+                    var mapOptions = {
+                        center: new google.maps.LatLng(51.5, -0.12),
+                        zoom: 10,
+                        mapTypeId: google.maps.MapTypeId.HYBRID
+                    }
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn3y5H6oPnxqSrxH4bN3hwlvpt2WHezG0&callback=myMap"></script>
+        </section>
+        <section>
+            <!-- <svg id="svgelem" height="600" xmlns="http://www.w3.org/2000/svg"> -->
+            <svg id="svgelem" height="300">
+
+                <circle id="redcircle" cx="50" cy="50" r="50" fill="green" />
+                <rect id="redrect" x="0" y="80" width="300" height="100" style="fill:rgb(71, 71, 199);stroke:pink;stroke-width:5;fill-opacity:0.3;stroke-opacity:0.9"
+                />
+                <line x1="0" y1="0" x2="200" y2="400" style="stroke:rgb(0, 26, 255);stroke-width:2" />
+
+            </svg>
+            <svg width="400" height="180">
+                <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
+                <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            </svg>
+            <svg height="110" width="110">
+                <defs>
+                    <filter id="f1" x="0" y="0">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+                    </filter>
+                </defs>
+                <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)" />
+            </svg>
+            <svg height="140" width="140">
+                <defs>
+                    <filter id="f4" x="0" y="0" width="200%" height="200%">
+                        <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+                        <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+                        <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                    </filter>
+                </defs>
+                <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f4)" />
+            </svg>
+
+            <svg height="150" width="400">
+                <defs>
+                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad3)" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86">
+                    SVG</text>
+            </svg>
+
+            <svg height="150" width="500">
+                <defs>
+                    <radialGradient id="grad2" cx="20%" cy="30%" r="30%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:rgb(255,255,255);
+                        stop-opacity:0" />
+                        <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad2)" />
+            </svg>
+
+        </section>
+        <section>
+            <p>Once article can have multiple sections</p>
+
+            <form action="http://example.com/cgiscript.pl" method="post">
+
+                <p>
+
+                    <label for="datetime"> Date Time</label>
+                    <input type="datetime">
+                    <br>
+
+                    <label for="firstname">first name: </label>
+                    <input type="text" id="firstname" required>
+                    <br />
+
+                    <label for="lastname">last name: </label>
+                    <input type="text" id="lastname">
+                    <br />
+
+                    <label for="email">email: </label>
+                    <input type="text" id="email" placeholder="myEmail@example.com" autofocus>
+                    <br>
+
+                    <input type="radio" name="sex" value="male"> Male
+                    <br>
+                    <input type="radio" name="sex" value="female"> Female
+                    <br>
+                    <input type="submit" value="send">
+                    <input type="reset">
+
+                </p>
+            </form>
+
+        </section>
+    </article>
+
+    <aside>
+        <p>This is aside part of the web page</p>
+    </aside>
+
+    <figure align="right">
+        <img src="/html5/images/logo.png" alt="TutorialPoint" width="200" height="100">
+    </figure>
+
+    <footer>
+        <p>Created by
+            <a href="#">Tutorials Point</a>
+        </p>
+    </footer>
+
+</body>
+
 </html>
